@@ -2,6 +2,9 @@ var express = require('express');
 var app = express();
 var handlebars = require('express-handlebars');
 
+
+const port = process.env.PORT || 3000;
+
 //---ROUTES---
 app.use(express.static('public'));
 
@@ -23,6 +26,6 @@ app.get('/', (req, res) => {
 
 
 //listening for requests on port 3000
-app.listen(3000,() => {
-    console.log(' Server listening on port 3000 :) ');
+app.listen(port,() => {
+    console.log(`Server listening on port:  ${port} :) `);
 });
